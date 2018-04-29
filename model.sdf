@@ -1,0 +1,247 @@
+<?xml version='1.0'>
+<sdf version='1.4'>
+	<model name='ProjectRobot'>
+		<link name='chassis'>
+			<pose>0 0 0.136 0 0 0</pose>
+			<collision name='collision1'>
+				<geometry>
+					<box>
+						<size>0.60 0.462 0.24</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='visual1'>
+				<geometry>
+					<box>
+						<size>0.60 0.462 0.24</size>
+					</box>
+				</geometry>
+			</visual>
+
+			<!-- Upper Part of wheel -->
+			<collision name='Upper_Wheel_Left'>
+				<!-- This pose is respect to the center of the box -->
+				<pose>0.185 0.2655 0.09 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.23 0.069 0.06</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='Upper_Wheel_Left'>
+				<!-- This pose is respect to the center of the box -->
+				<pose>0.185 0.2655 0.09 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.23 0.069 0.06</size>
+					</box>
+				</geometry>
+			</visual>			
+			
+			<!-- Upper Part of wheel-->
+			<collision name='Upper_Wheel_Right'>
+				<!-- This pose is respect to the center of the box -->				
+				<pose>0.185 -0.2655 0.09 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.23 0.069 0.06</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='Upper_Wheel_Right'>
+				<!-- This pose is respect to the center of the box -->
+				<pose>0.185 -0.2655 0.09 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.23 0.069 0.06</size>
+					</box>
+				</geometry>
+			</visual>	
+
+			<!-- Lateral flat piece between wheel and caster -->
+			<collision name='Lateral_Flat_Left'>
+				<!-- This pose is respect to the center of the box -->				
+				<pose>-0.075 0.2655 0 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.29 0.069 0.24</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='Lateral_Flat_Left'>
+				<!-- This pose is respect to the center of the box -->
+				<pose>-0.075 0.2655 0 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.29 0.069  0.24</size>
+					</box>
+				</geometry>
+			</visual>
+
+			<!-- Lateral flat piece between wheel and caster -->
+			<collision name='Lateral_Flat_Right'>
+				<!-- This pose is respect to the center of the box -->				
+				<pose>-0.075 -0.2655 0 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.29 0.069  0.24</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='Lateral_Flat_Right'>
+				<!-- This pose is respect to the center of the box -->
+				<pose>-0.075 -0.2655 0 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.29 0.069  0.24</size>
+					</box>
+				</geometry>
+			</visual>
+
+			<!-- Upper Part of caster -->
+			<collision name='Upper_Caster_Left'>
+				<!-- This pose is respect to the center of the box -->
+				<pose>-0.26  0.2655 0.0175 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.08 0.069 0.205</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='Upper_Caster_Left'>
+				<!-- This pose is respect to the center of the box -->
+				<pose>-0.26  0.2655 0.0175 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.08 0.069  0.205</size>
+					</box>
+				</geometry>
+			</visual>
+
+			<!-- Upper Part of caster -->
+			<collision name='Upper_Caster_Right'>
+				<!-- This pose is respect to the center of the box -->
+				<pose>-0.26  -0.2655 0.0175 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.08 0.069 0.205</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='Upper_Caster_Right'>
+				<!-- This pose is respect to the center of the box -->
+				<pose>-0.26  -0.2655 0.0175 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.08 0.069  0.205</size>
+					</box>
+				</geometry>
+			</visual>
+		
+		</link>
+
+		<link name='LeftWheel'>
+			<!-- This pose respect to origin -->
+			<pose> 0.185 -0.2525 0.095 0 1.5707 1.5707</pose>			
+			<collision name='collision'>
+				<geometry>
+					<cylinder>
+						<radius>0.095</radius>
+						<length>0.038</length>
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name='visual'>
+				<geometry>
+					<cylinder>
+						<radius>0.095</radius>
+						<length>0.038</length>
+					</cylinder>
+				</geometry>
+			</visual>		
+		</link>
+		<link name='RightWheel'>
+			<!-- This pose respect to origin -->			
+			<pose> 0.185 0.2525 0.095 0 1.5707 1.5707</pose>			
+			<collision name='collision'>
+				<geometry>
+					<cylinder>
+						<radius>0.095</radius>
+						<length>0.038</length>						
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name='visual'>
+				<geometry>
+					<cylinder>
+						<radius>0.095</radius>
+						<length>0.038</length>						
+					</cylinder>
+				</geometry>
+			</visual>					
+		</link>
+		
+		<link name='LeftCaster'>
+			<pose> -0.275 -0.2525 0.025 0 0 0</pose>				
+			<collision name='collision'>
+				<geometry>
+					<sphere>
+						<radius>0.025</radius>
+					</sphere>
+				</geometry>
+			</collision>
+			<visual name='visual'>
+				<geometry>
+					<sphere>
+						<radius>0.025</radius>
+					</sphere>
+				</geometry>
+			</visual>		
+
+		</link>
+		<link name='RightCaster'>
+			<pose> -0.275 0.2525 0.025 0 0 0</pose>				
+			<collision name='collision'>
+				<geometry>
+					<sphere>
+						<radius>0.025</radius>
+					</sphere>
+				</geometry>
+			</collision>
+			<visual name='visual'>
+				<geometry>
+					<sphere>
+						<radius>0.025</radius>
+					</sphere>
+				</geometry>
+			</visual>		
+
+		</link>	
+
+		<joint type="ball" name="left_caster_hinge">
+			<child>LeftCaster</child>
+			<parent>chassis</parent>
+		</joint>
+		<joint type="ball" name="right_caster_hinge">
+			<child>RightCaster</child>
+			<parent>chassis</parent>
+
+		</joint>
+
+		<joint type="revolute" name="left_wheel_hinge">
+			<child>LeftWheel</child>
+			<parent>chassis</parent>
+			<axis>
+				<xyz>0 1 0</xyz>
+			</axis>
+		</joint>
+		<joint type="revolute" name="right_wheel_hinge">
+			<child>RightWheel</child>
+			<parent>chassis</parent>
+			<axis>
+				<xyz>0 1 0</xyz>
+			</axis>
+		</joint>		
+
+	</model>
+</sdf>
