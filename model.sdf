@@ -3,20 +3,24 @@
 	<model name='ProjectRobot'>
 		<link name='chassis'>
 			<pose>0 0 0.136 0 0 0</pose>
-			<collision name='collision1'>
+			<!-- Iron Construction -->
+			<collision name='IronLayer'>
+				<pose>-0.12 0 0 0 0 0</pose>				
 				<geometry>
 					<box>
-						<size>0.60 0.462 0.24</size>
+						<size>0.36 0.462 0.24</size>
 					</box>
 				</geometry>
 			</collision>
-			<visual name='visual1'>
+			<visual name='IronLayer'>
+				<pose>-0.12 0 0 0 0 0</pose>				
 				<geometry>
 					<box>
-						<size>0.60 0.462 0.24</size>
+						<size>0.36 0.462 0.24</size>
 					</box>
 				</geometry>
 			</visual>
+
 
 			<!-- Upper Part of wheel -->
 			<collision name='Upper_Wheel_Left'>
@@ -138,7 +142,178 @@
 				</geometry>
 			</visual>
 		
+			<inertial>
+				<mass> 7.8612 </mass>
+			</inertial>
 		</link>
+
+		<link name='LeftMotorPlate'>
+			<!-- Left Motor Plate-->
+			<collision name='LeftMotorPlate'>
+				<pose>0.18 -0.226 0.136 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.24 0.01 0.24</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='LeftMotorPlate'>
+				<pose>0.18 -0.226 0.136 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.24 0.01 0.24</size>
+					</box>
+				</geometry>
+			</visual>
+			<inertial>
+				<mass> 0.8041 </mass>
+			</inertial>
+
+		</link>
+		<joint type="fixed" name="LeftMotorPlateFix">
+			<child>LeftMotorPlate</child>
+			<parent>chassis</parent>
+		</joint>
+
+		<link name='RightMotorPlate'>
+			<!-- Right Motor Plate-->
+			<collision name='RightMotorPlate'>
+				<pose>0.18 0.226 0.136 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.24 0.01 0.24</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='RightMotorPlate'>
+				<pose>0.18 0.226 0.136 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.24 0.01 0.24</size>
+					</box>
+				</geometry>
+			</visual>
+			<inertial>
+				<mass> 0.8041 </mass>
+			</inertial>
+		</link>
+		<joint type="fixed" name="RightMotorPlateFix">
+			<child>RightMotorPlate</child>
+			<parent>chassis</parent>
+		</joint>
+
+		<link name='LeftMotor'>
+			<collision name='Left Motor'>
+				<pose>0.25 -0.15 0.036 0 1.5707 1.5707</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.02</radius>
+						<length>0.174</length>	
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name='Left Motor'>
+				<pose>0.25 -0.15 0.036 0 1.5707 1.5707</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.02</radius>
+						<length>0.174</length>	
+					</cylinder>
+				</geometry>
+			</visual>
+			<inertial>
+				<mass> 0.41504 </mass>
+			</inertial>
+		</link>
+		<joint type="fixed" name="LefttMotorFix">
+			<child>LeftMotor</child>
+			<parent>chassis</parent>
+		</joint>
+
+		<link name='RightMotor'>
+			<collision name='Right Motor'>
+				<pose>0.25 0.14 0.036 0 1.5707 1.5707</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.02</radius>
+						<length>0.174</length>	
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name='Right Motor'>
+				<pose>0.25 0.14 0.036 0 1.5707 1.5707</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.02</radius>
+						<length>0.174</length>	
+					</cylinder>
+				</geometry>
+			</visual>
+			<inertial>
+				<mass> 0.41504 </mass>
+			</inertial>
+		</link>
+
+		<joint type="fixed" name="RightMotorFix">
+			<child>RightMotor</child>
+			<parent>chassis</parent>
+		</joint>
+
+
+		<link name='BaseLayer'>	
+			<!-- Base Plane -->
+			<collision name='BaseLayer'>
+				<pose>0 0 0.016 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.60 0.462 0.01</size>
+					</box>
+				</geometry>
+			</collision>
+			<visual name='BaseLayer'>
+				<pose>0 0 0.016 0 0 0</pose>
+				<geometry>
+					<box>
+						<size>0.60 0.462 0.01</size>
+					</box>
+				</geometry>
+			</visual>
+			<inertial>
+				<mass> 1.551 </mass>
+			</inertial>
+		</link>
+		<joint type="fixed" name="BaseLayerFix">
+			<child>BaseLayer</child>
+			<parent>chassis</parent>
+		</joint>
+
+		<link name='Rot'>
+			<collision name='Rot'>
+				<pose>0.22 0 0.111 0 1.5707 1.5707</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.005</radius>
+						<length>0.452</length>	
+					</cylinder>
+				</geometry>
+			</collision>
+			<visual name='Rot'>
+				<pose>0.22 0 0.111 0 1.5707 1.5707</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.005</radius>
+						<length>0.452</length>	
+					</cylinder>
+				</geometry>
+			</visual>
+			<inertial>
+				<mass> 0.82663 </mass>
+			</inertial>			
+		</link>
+		<joint type="fixed" name="RotFix">
+			<child>Rot</child>
+			<parent>chassis</parent>
+		</joint>
 
 		<link name='LeftWheel'>
 			<!-- This pose respect to origin -->
@@ -158,7 +333,11 @@
 						<length>0.038</length>
 					</cylinder>
 				</geometry>
-			</visual>		
+			</visual>	
+			<inertial>
+				<mass> 2.325 </mass>
+			</inertial>
+
 		</link>
 		<link name='RightWheel'>
 			<!-- This pose respect to origin -->			
@@ -178,7 +357,10 @@
 						<length>0.038</length>						
 					</cylinder>
 				</geometry>
-			</visual>					
+			</visual>		
+			<inertial>
+				<mass> 2.325 </mass>
+			</inertial>						
 		</link>
 		
 		<link name='LeftCaster'>
@@ -197,7 +379,9 @@
 					</sphere>
 				</geometry>
 			</visual>		
-
+			<inertial>
+				<mass> 0.101553 </mass>
+			</inertial>
 		</link>
 		<link name='RightCaster'>
 			<pose> -0.275 0.2525 0.025 0 0 0</pose>				
@@ -215,7 +399,9 @@
 					</sphere>
 				</geometry>
 			</visual>		
-
+			<inertial>
+				<mass> 0.101553 </mass>
+			</inertial>
 		</link>	
 
 		<joint type="ball" name="left_caster_hinge">
@@ -230,14 +416,14 @@
 
 		<joint type="revolute" name="left_wheel_hinge">
 			<child>LeftWheel</child>
-			<parent>chassis</parent>
+			<parent>LeftMotorPlate</parent>
 			<axis>
 				<xyz>0 1 0</xyz>
 			</axis>
 		</joint>
 		<joint type="revolute" name="right_wheel_hinge">
 			<child>RightWheel</child>
-			<parent>chassis</parent>
+			<parent>RightMotorPlate</parent>
 			<axis>
 				<xyz>0 1 0</xyz>
 			</axis>
