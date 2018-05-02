@@ -9,3 +9,5 @@ add_library(encoder SHARED encoder.cc)
 target_link_libraries(encoder ${GAZEBO_LIBRARIES})
 
 
+
+include_directories(${catkin_INCLUDE_DIRS})
