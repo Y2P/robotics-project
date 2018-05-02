@@ -5,7 +5,7 @@
 #include <ignition/math/Vector3.hh>
 #include <boost/algorithm/string/replace.hpp>
 #include <string>
-// #include <ros/ros.h>
+
 // This plugin simulates the encoder sensor that measures the rotational
 // speed of the wheels of differential drive robot. It basically reads 
 // rotational velocities in the joints in the wheel per 50ms(20Hz) and 
@@ -14,12 +14,12 @@ namespace gazebo
 {
 	class Encoder : public ModelPlugin
 	{
-		//private: ros::NodeHandlePtr nh;
-		//private: ros::Timer timer;
 		private: physics::ModelPtr model;
 		private: event::ConnectionPtr updateConnection;
 		private: gazebo::physics::JointPtr joint_left;
 		private: gazebo::physics::JointPtr joint_right;
+		private: double prevtime = 0;
+		private: double currenttime = 0;
 
 		public: void Load(physics::ModelPtr model, sdf::ElementPtr sdf)
 		{
@@ -27,15 +27,22 @@ namespace gazebo
 			// Get joints by name
   			this->joint_left = model->GetJoint(("left_wheel_hinge"));
   			this->joint_right = model->GetJoint(("right_wheel_hinge"));
-			//this->nh = boost::make_shared<ros::NodeHandle>();
-        	//this->timer = nh->createTimer(ros::Duration(0.05), timerCallback);
-			this->updateConnection = event::Events::ConnectWorldUpdateBegin(std::bind(&Encoder::OnUpdate, this));
+  			// Update function is assigned
+			this->updateConnection = event::Events::ConnectWorldUpdateBegin(std::bind(&Encoder::OnUpdate, this,std::placeholders::_1));
 		}
-		public: void OnUpdate()
+		public: void OnUpdate(const common::UpdateInfo &_info)
 		{	
-			// Print velocities
-			printf("Right Velocity: %.3f ",this->GetRightVelocity());
-			printf("Left Velocity: %.3f\n",this->GetLeftVelocity());
+			// Decleration of update function
+			this->currenttime = _info.simTime.Double();
+			// At least 50 ms is waited after each angle read (20 Hz)
+			if(this->currenttime >= (this->prevtime + 0.05))
+			{
+				// Print velocities
+				printf("Right Velocity: %.3f ",this->GetRightVelocity());
+				printf("Left Velocity: %.3f\n",this->GetLeftVelocity());
+				this->prevtime =this->currenttime;	
+			}
+			
 		}
 
 		// Get Velocities in Radian
