@@ -1,0 +1,3 @@
+/home/y2p/Desktop/Robotics/Plugins/encoder/build/CMakeFiles/rebuild_cache.dir
+/home/y2p/Desktop/Robotics/Plugins/encoder/build/CMakeFiles/edit_cache.dir
+/home/y2p/Desktop/Robotics/Plugins/encoder/build/CMakeFiles/encoder.dir
