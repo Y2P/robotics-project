@@ -1,5 +1,7 @@
 # robotics-project
 Robotic Course Project
+## Center Of Gravity Calculation and Comparison
+- [link](https://docs.google.com/spreadsheets/d/1kg4qDNlRVLUL10LXPXtpyaenjM7nos9NKvdP7xEpVFE/edit?usp=sharing)
 
 ## To run differential drive plugin
 

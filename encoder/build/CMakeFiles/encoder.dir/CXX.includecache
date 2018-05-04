@@ -21,6 +21,10 @@ boost/algorithm/string/replace.hpp
 -
 string
 -
+iterator
+-
+vector
+-
 
 /usr/include/gazebo-7/gazebo/Master.hh
 string
