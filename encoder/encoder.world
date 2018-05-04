@@ -151,9 +151,17 @@
 						</box>
 					</geometry>
 				</visual>
-			
+
 				<inertial>
 					<mass> 7.8612 </mass>
+					<inertia>
+						<ixx>0.2620398952</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.2620398952</iyy>
+						<iyz>0</iyz>
+						<izz>0.4716718113</izz>
+					</inertia>
 				</inertial>
 			</link>
 
@@ -177,6 +185,22 @@
 				</visual>
 				<inertial>
 					<mass> 0.8041 </mass>
+				<!-- <inertia>
+						<ixx>0.003866379287</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.007719356912</iyy>
+						<iyz>0</iyz>
+						<izz>0.003866379287</izz>
+					</inertia> -->
+					<inertia>
+						<ixx>0</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0</iyy>
+						<iyz>0</iyz>
+						<izz>0</izz>
+					</inertia>
 				</inertial>
 
 			</link>
@@ -205,6 +229,22 @@
 				</visual>
 				<inertial>
 					<mass> 0.8041 </mass>
+	            <!-- <inertia>
+						<ixx>0.003866379287</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.007719356912</iyy>
+						<iyz>0</iyz>
+						<izz>0.003866379287</izz>
+					</inertia> -->
+					<inertia>
+						<ixx>0</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0</iyy>
+						<iyz>0</iyz>
+						<izz>0</izz>
+					</inertia>
 				</inertial>
 			</link>
 			<joint type="fixed" name="RightMotorPlateFix">
@@ -233,6 +273,22 @@
 				</visual>
 				<inertial>
 					<mass> 0.41504 </mass>
+					<inertia>
+						<ixx>0</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0</iyy>
+						<iyz>0</iyz>
+						<izz>0</izz>
+					</inertia>
+				<!-- <inertia>
+						<ixx>0.00108864992</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.00108864992</iyy>
+						<iyz>0</iyz>
+						<izz>0.00108864992</izz>
+					</inertia> -->
 				</inertial>
 			</link>
 			<joint type="fixed" name="LefttMotorFix">
@@ -261,6 +317,22 @@
 				</visual>
 				<inertial>
 					<mass> 0.41504 </mass>
+					<inertia>
+						<ixx>0</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0</iyy>
+						<iyz>0</iyz>
+						<izz>0</izz>
+					</inertia>
+				<!-- <inertia>
+						<ixx>0.00108864992</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.00108864992</iyy>
+						<iyz>0</iyz>
+						<izz>0.00108864992</izz>
+					</inertia> -->
 				</inertial>
 			</link>
 
@@ -290,6 +362,22 @@
 				</visual>
 				<inertial>
 					<mass> 1.551 </mass>
+					<inertia>
+						<ixx>0</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0</iyy>
+						<iyz>0</iyz>
+						<izz>0</izz>
+					</inertia>
+				<!-- <inertia>
+						<ixx>0.02760055096</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.04654290638</iyy>
+						<iyz>0</iyz>
+						<izz>0.07411760735</izz>
+					</inertia> -->
 				</inertial>
 			</link>
 			<joint type="fixed" name="BaseLayerFix">
@@ -318,6 +406,22 @@
 				</visual>
 				<inertial>
 					<mass> 0.82663 </mass>
+					<inertia>
+						<ixx>0</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0</iyy>
+						<iyz>0</iyz>
+						<izz>0</izz>
+					</inertia>
+				<!-- <inertia>
+						<ixx>0.01407881773</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.01407881773</iyy>
+						<iyz>0</iyz>
+						<izz>0.01407881773</izz>
+					</inertia> -->
 				</inertial>			
 			</link>
 			<joint type="fixed" name="RotFix">
@@ -335,6 +439,14 @@
 							<length>0.038</length>
 						</cylinder>
 					</geometry>
+					<surface>
+						<friction>
+							<ode>
+								<mu>0.6</mu>
+								<mu2>0.85</mu2>
+							</ode>
+						</friction>
+					</surface>
 				</collision>
 				<visual name='visual'>
 					<geometry>
@@ -343,9 +455,23 @@
 							<length>0.038</length>
 						</cylinder>
 					</geometry>
+					<material>
+						<ambient>0 0 0 1</ambient>
+						<diffuse>0 0 0 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
 				</visual>	
 				<inertial>
 					<mass> 2.325 </mass>
+					<inertia>
+						<ixx>0.00552555625</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.00552555625</iyy>
+						<iyz>0</iyz>
+						<izz>0.00552555625</izz>
+					</inertia>
 				</inertial>
 
 			</link>
@@ -359,6 +485,14 @@
 							<length>0.038</length>						
 						</cylinder>
 					</geometry>
+					<surface>
+						<friction>
+							<ode>
+								<mu>0.6</mu>
+								<mu2>0.85</mu2>
+							</ode>
+						</friction>
+					</surface>
 				</collision>
 				<visual name='visual'>
 					<geometry>
@@ -367,9 +501,23 @@
 							<length>0.038</length>						
 						</cylinder>
 					</geometry>
+					<material>
+						<ambient>0 0 0 1</ambient>
+						<diffuse>0 0 0 1</diffuse>
+						<specular>0 0 0 0</specular>
+						<emissive>0 0 0 1</emissive>
+					</material>
 				</visual>		
 				<inertial>
 					<mass> 2.325 </mass>
+					<inertia>
+						<ixx>0.00552555625</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.00552555625</iyy>
+						<iyz>0</iyz>
+						<izz>0.00552555625</izz>
+					</inertia>
 				</inertial>						
 			</link>
 			
@@ -381,6 +529,14 @@
 							<radius>0.025</radius>
 						</sphere>
 					</geometry>
+					<surface>
+						<friction>
+							<ode>
+								<mu>0.6</mu>
+								<mu2>0.85</mu2>
+							</ode>
+						</friction>
+					</surface>
 				</collision>
 				<visual name='visual'>
 					<geometry>
@@ -391,6 +547,14 @@
 				</visual>		
 				<inertial>
 					<mass> 0.101553 </mass>
+					<inertia>
+						<ixx>0.00002538825</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.00002538825</iyy>
+						<iyz>0</iyz>
+						<izz>0.00002538825</izz>
+					</inertia>
 				</inertial>
 			</link>
 			<link name='RightCaster'>
@@ -401,6 +565,14 @@
 							<radius>0.025</radius>
 						</sphere>
 					</geometry>
+					<surface>
+						<friction>
+							<ode>
+								<mu>0.6</mu>
+								<mu2>0.85</mu2>
+							</ode>
+						</friction>
+					</surface>
 				</collision>
 				<visual name='visual'>
 					<geometry>
@@ -411,6 +583,14 @@
 				</visual>		
 				<inertial>
 					<mass> 0.101553 </mass>
+					<inertia>
+						<ixx>0.00002538825</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.00002538825</iyy>
+						<iyz>0</iyz>
+						<izz>0.00002538825</izz>
+					</inertia>
 				</inertial>
 			</link>	
 
@@ -421,7 +601,6 @@
 			<joint type="ball" name="right_caster_hinge">
 				<child>RightCaster</child>
 				<parent>chassis</parent>
-
 			</joint>
 
 			<joint type="revolute" name="left_wheel_hinge">
@@ -439,6 +618,7 @@
 				</axis>
 			</joint>		
 
+			
 			<plugin name="encoder" filename="libencoder.so"/>
 			<plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
 				<alwaysOn>true</alwaysOn>
