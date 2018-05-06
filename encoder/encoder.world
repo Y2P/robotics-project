@@ -185,21 +185,13 @@
 				</visual>
 				<inertial>
 					<mass> 0.8041 </mass>
-				<!-- <inertia>
+					<inertia>
 						<ixx>0.003866379287</ixx>
 						<ixy>0</ixy>
 						<ixz>0</ixz>
 						<iyy>0.007719356912</iyy>
 						<iyz>0</iyz>
 						<izz>0.003866379287</izz>
-					</inertia> -->
-					<inertia>
-						<ixx>0</ixx>
-						<ixy>0</ixy>
-						<ixz>0</ixz>
-						<iyy>0</iyy>
-						<iyz>0</iyz>
-						<izz>0</izz>
 					</inertia>
 				</inertial>
 
@@ -228,21 +220,13 @@
 				</visual>
 				<inertial>
 					<mass> 0.8041 </mass>
-	            <!-- <inertia>
+					<inertia>
 						<ixx>0.003866379287</ixx>
 						<ixy>0</ixy>
 						<ixz>0</ixz>
 						<iyy>0.007719356912</iyy>
 						<iyz>0</iyz>
 						<izz>0.003866379287</izz>
-					</inertia> -->
-					<inertia>
-						<ixx>0</ixx>
-						<ixy>0</ixy>
-						<ixz>0</ixz>
-						<iyy>0</iyy>
-						<iyz>0</iyz>
-						<izz>0</izz>
 					</inertia>
 				</inertial>
 			</link>
@@ -269,6 +253,14 @@
 				</visual>
 				<inertial>
 					<mass> 0.31054 </mass>
+					<inertia>
+						<ixx>0.001493179236</ixx>
+						<ixy>0</ixy>
+						<ixz>0</ixz>
+						<iyy>0.004660685969</iyy>
+						<iyz>0</iyz>
+						<izz>0.003172682398</izz>
+					</inertia>
 				</inertial>
 			</link>
 			<joint type="fixed" name="SidePlateFix">
@@ -297,21 +289,13 @@
 				<inertial>
 					<mass> 0.41504 </mass>
 					<inertia>
-						<ixx>0</ixx>
-						<ixy>0</ixy>
-						<ixz>0</ixz>
-						<iyy>0</iyy>
-						<iyz>0</iyz>
-						<izz>0</izz>
-					</inertia>
-				<!-- <inertia>
 						<ixx>0.00108864992</ixx>
 						<ixy>0</ixy>
 						<ixz>0</ixz>
 						<iyy>0.00108864992</iyy>
 						<iyz>0</iyz>
 						<izz>0.00108864992</izz>
-					</inertia> -->
+					</inertia>
 				</inertial>
 			</link>
 			<joint type="fixed" name="LefttMotorFix">
@@ -340,21 +324,13 @@
 				<inertial>
 					<mass> 0.41504 </mass>
 					<inertia>
-						<ixx>0</ixx>
-						<ixy>0</ixy>
-						<ixz>0</ixz>
-						<iyy>0</iyy>
-						<iyz>0</iyz>
-						<izz>0</izz>
-					</inertia>
-				<!-- <inertia>
 						<ixx>0.00108864992</ixx>
 						<ixy>0</ixy>
 						<ixz>0</ixz>
 						<iyy>0.00108864992</iyy>
 						<iyz>0</iyz>
 						<izz>0.00108864992</izz>
-					</inertia> -->
+					</inertia>
 				</inertial>
 			</link>
 
@@ -384,21 +360,13 @@
 				<inertial>
 					<mass> 1.551 </mass>
 					<inertia>
-						<ixx>0</ixx>
-						<ixy>0</ixy>
-						<ixz>0</ixz>
-						<iyy>0</iyy>
-						<iyz>0</iyz>
-						<izz>0</izz>
-					</inertia>
-				<!-- <inertia>
 						<ixx>0.02760055096</ixx>
 						<ixy>0</ixy>
 						<ixz>0</ixz>
 						<iyy>0.04654290638</iyy>
 						<iyz>0</iyz>
 						<izz>0.07411760735</izz>
-					</inertia> -->
+					</inertia>
 				</inertial>
 			</link>
 			<joint type="fixed" name="BaseLayerFix">
@@ -427,21 +395,13 @@
 				<inertial>
 					<mass> 0.82663 </mass>
 					<inertia>
-						<ixx>0</ixx>
-						<ixy>0</ixy>
-						<ixz>0</ixz>
-						<iyy>0</iyy>
-						<iyz>0</iyz>
-						<izz>0</izz>
-					</inertia>
-				<!-- <inertia>
 						<ixx>0.01407881773</ixx>
 						<ixy>0</ixy>
 						<ixz>0</ixz>
 						<iyy>0.01407881773</iyy>
 						<iyz>0</iyz>
 						<izz>0.01407881773</izz>
-					</inertia> -->
+					</inertia>
 				</inertial>			
 			</link>
 			<joint type="fixed" name="RotFix">
