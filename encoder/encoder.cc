@@ -4,9 +4,11 @@
 #include <gazebo/common/common.hh>
 #include <ignition/math/Vector3.hh>
 #include <boost/algorithm/string/replace.hpp>
+#include <ros/ros.h>
 #include <string>
 #include <iterator>
 #include <vector>
+#include <std_msgs/Float64.h>
 // This plugin simulates the encoder sensor that measures the rotational
 // speed of the wheels of differential drive robot. It basically reads 
 // rotational velocities in the joints in the wheel per 50ms(20Hz) and 
@@ -24,6 +26,10 @@ namespace gazebo
 		private: double prevtime = 0;
 		private: double currenttime = 0;
 
+		private: ros::NodeHandle nh;
+		private: ros::Publisher publisher1;
+		private: ros::Publisher publisher2;
+
 		public: void Load(physics::ModelPtr model, sdf::ElementPtr sdf)
 		{
 			// This part is just for comparing center of gravities
@@ -31,9 +37,13 @@ namespace gazebo
 			//printf("Number of Links: %d\n", (int)link_list.size());
 			double TotalMass = 0;
 			gazebo::physics::InertialPtr inertia_p;
+
 			CoG.x = 0;
 			CoG.y = 0;
 			CoG.z = 0;
+
+			this->publisher1 = this->nh.advertise<std_msgs::Float64>("right_encoder", 1);
+			this->publisher2 = this->nh.advertise<std_msgs::Float64>("left_encoder", 1);
 
 			for (physics::Link_V::iterator it = link_list.begin(); it!= link_list.end(); it++)
 			{
@@ -49,9 +59,9 @@ namespace gazebo
 
 			this->model = model;
 			// Get joints by name
-  			this->joint_left = model->GetJoint(("left_wheel_hinge"));
-  			this->joint_right = model->GetJoint(("right_wheel_hinge"));
-  			// Update function is assigned
+			this->joint_left = model->GetJoint(("left_wheel_hinge"));
+			this->joint_right = model->GetJoint(("right_wheel_hinge"));
+			// Update function is assigned
 			this->updateConnection = event::Events::ConnectWorldUpdateBegin(std::bind(&Encoder::OnUpdate, this,std::placeholders::_1));
 		}
 		public: void OnUpdate(const common::UpdateInfo &_info)
@@ -65,7 +75,13 @@ namespace gazebo
 				// Print velocities
 				printf("Right Velocity: %.3f ",this->GetRightVelocity());
 				printf("Left Velocity: %.3f\n",this->GetLeftVelocity());
-				this->prevtime =this->currenttime;	
+				this->prevtime =this->currenttime;
+
+				std_msgs::Float64 msg;
+				msg.data = this->GetRightVelocity();
+				publisher1.publish(msg);
+				msg.data = this->GetLeftVelocity();
+				publisher2.publish(msg);
 			}
 			
 		}
