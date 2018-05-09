@@ -587,14 +587,14 @@
 				<child>LeftWheel</child>
 				<parent>LeftMotorPlate</parent>
 				<axis>
-					<xyz>0 1 0</xyz>
+					<xyz>0 -1 0</xyz>
 				</axis>
 			</joint>
 			<joint type="revolute" name="right_wheel_hinge">
 				<child>RightWheel</child>
 				<parent>RightMotorPlate</parent>
 				<axis>
-					<xyz>0 1 0</xyz>
+					<xyz>0 -1 0</xyz>
 				</axis>
 			</joint>		
 
@@ -603,6 +603,7 @@
 			<plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
 				<alwaysOn>true</alwaysOn>
 				<updateRate>20</updateRate>
+				<robotNamespace>/</robotNamespace>
 				<leftJoint>right_wheel_hinge</leftJoint>
 				<rightJoint>left_wheel_hinge</rightJoint>
 				<wheelSeparation>0.462</wheelSeparation>
